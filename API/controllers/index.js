@@ -1,15 +1,24 @@
 import {signIn, signUp, logOut, refreshToken} from "./auth"
-import {getNote, getListNotes} from "./note"
+import {  deleteNote,
+    editNote,
+    getListNotes,
+    getNote,
+    createNote} from "./note"
 
 export default {
-    // Query: {
-    //     getNote: (_,args) => getNote(_,args),
-    //     getListNotes
-    // },
+    Query: {
+        getNote,
+        getListNotes
+    },
     Mutation: {
+        // Auth Mutations
         signIn,
         signUp,
         logOut,
-        refreshToken
+        refreshToken,
+        // Notes mutations 
+        deleteNote,
+        editNote,
+        createNote
     }
 }

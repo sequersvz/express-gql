@@ -1,15 +1,15 @@
 export default `
 type Note {
-    id: String!
-    date: String!
-    title: String!
-    description: String!
+    id: String
+    date: String
+    title: String
+    description: String
     status: String
 }
 
-type actionNote {
-    id: String!
-    accessToken: String
+input actionNote {
+    id: String
+    accessToken: String!
     description: String
     title: String
 }
