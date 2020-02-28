@@ -1,0 +1,31 @@
+type Note {
+    id: String!
+    date: String!
+    title: String!
+    description: String!
+}
+
+type AuthPayload {
+    accessToken: String
+    refreshToken: String
+    error: Boolean!
+}
+
+input User {
+    username: String!
+    password: String!
+}
+
+
+
+type Query {
+    getNote(id: ID!): Note
+    getListNotes(user: ID!): [Note]
+}
+
+type Mutation {
+    signIn(user: User): AuthPayload
+    signUp(user: User): Boolean
+    refreshToken(refreshToken: ID!) : SessionTokens
+    logOut(accessToken: ID!): Boolean
+}
